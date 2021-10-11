@@ -5,6 +5,23 @@ function startGame(){
 }
 
 var checkmark = document.getElementById("checkmark")
+var wrong = document.getElementById("wrong");
+var correct = document.getElementById("correct");
+var correctInt = 0
+function checkColor(color, correctAnswer){
+    if(color===correctAnswer){
+        correctInt++;
+        checkmark.classList.add("fadeAway");
+    }else{
+        wrong.classList.add("fadeAway");
+    }
+    setTimeout(function(){
+        checkmark.classList.remove("fadeAway");
+        wrong.classList.remove("fadeAway");
+    },500);
+    reset();
+    correct.innerHTML = correctInt;
+}
 
 function reset(){
     var random1 = Math.floor(Math.random()*2);
@@ -31,6 +48,26 @@ function reset(){
         color1.innerHTML=colors[random-1]; 
     }
     color1.style.display = "block";
-    color2.style.display = "block"
+    color2.style.display = "block";
+    addClick("Blue", correctAnswer);
+    addClick("Red", correctAnswer);
+    addClick("Green", correctAnswer);
+    addClick("Yellow", correctAnswer);
 
+}
+function addClick(color, correctAnswer){
+    var colorSpan = document.getElementById(color);
+    let onclick = "checkColor('".concat(color,"','",correctAnswer,"')");
+    colorSpan.setAttribute("onclick", onclick);
+}
+
+var countdown = 30;
+function timer(){
+    document.getElementById("time").innerHTML = countdown;
+    if(countdown==0){
+        clearInterval(timer);
+        alert("Game Over. Score: " + correctInt);
+        location.reload();
+    }
+    countdown--;
 }
