@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    overflow-x: none;
+}
+body{
+    max-width: 300px;
+    margin: auto;
+}
+.bottom{
+    display: flex;
+}
