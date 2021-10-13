@@ -10,6 +10,6 @@
  
 </p>
 
-> Create a Color Gradient Blending app with HTML, CSS and Javascript. Also used Bootstrap for styling.<br> It deployed on Netlify.
+> Create a Color Gradient Blending app with HTML, CSS and Javascript. Also used Bootstrap for styling.<br> It is deployed on Netlify.
 
-### ✨ [Live demo]()
+### ✨ [Live demo](https://xenodochial-mccarthy-5ff8f2.netlify.app/)
